@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package param;
+
+message Request {
+    string nama = 1;
+    string email = 2;
+
+}
+
+message Response {
+    string responseCode = 1;
+    string responseMessage = 2;
+}
+
+service TestRequest {
+    rpc GetResponse(Request) returns (Response) {}
+}
