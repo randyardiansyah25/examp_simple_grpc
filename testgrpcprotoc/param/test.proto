@@ -1,0 +1,17 @@
+syntax="proto3";
+package param;
+
+message Person {
+    string name     = 1;
+    int32 age       = 2;
+    string gender   = 3;
+}
+
+message NewPerson {
+    Person person = 1;
+    string ID     = 2;
+}
+
+service PersonHandler {
+    rpc AddPerson(Person) returns (NewPerson) {}
+}
